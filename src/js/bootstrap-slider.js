@@ -1202,13 +1202,13 @@ const windowIsDefined = (typeof window === "object");
 
 				this.handle1.style[this.stylePos] = `${positionPercentages[0]}%`;
 				this.handle1.setAttribute('aria-valuenow', this._state.value[0]);
-				if (isNaN(this.options.formatter(this._state.value[0])) ) {
+				if (typeof this.options.formatter(this._state.value[0]) === 'string') {
 					this.handle1.setAttribute('aria-valuetext', this.options.formatter(this._state.value[0]));
 				}
 
 				this.handle2.style[this.stylePos] =`${positionPercentages[1]}%`;
 				this.handle2.setAttribute('aria-valuenow', this._state.value[1]);
-				if (isNaN(this.options.formatter(this._state.value[1])) ) {
+				if (typeof this.options.formatter(this._state.value[1]) === 'string') {
 					this.handle2.setAttribute('aria-valuetext', this.options.formatter(this._state.value[1]));
 				}
 
